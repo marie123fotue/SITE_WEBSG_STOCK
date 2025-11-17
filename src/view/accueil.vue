@@ -1,7 +1,7 @@
 <template>
   <!-- En-tête -->
   <!-- HEADER PRINCIPAL -->
-  <header class="relative   w-full min-h-screen md:min-h-[600px] lg:min-h-[700px] overflow-hidden  font-[Poppins]">
+  <header class=" group relative w-full min-h-screen md:min-h-[600px] lg:min-h-[700px] overflow-hidden  font-[Poppins]">
 
     <!-- Fond dégradé -->
     <div class="absolute inset-0 bg-gradient-to-br from-[#77C1EB] via-[#9B7EC4] to-[#dfb49fec]"></div>
@@ -18,11 +18,11 @@
     </div>
 
     <!-- CONTENU PRINCIPAL -->
-    <div class="relative z-10 container mx-auto px-4 md:px-6 lg:px-8 pt-20 md:pt-24 pb-12">
+    <div class="relative z-30 container mx-auto px-4 md:px-6 lg:px-8 pt-20 md:pt-15 pb-12">
 
       <!-- LOGO CENTRÉ -->
-      <div class="flex justify-center mb-6 md:mb-8">
-        <img src="@/assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-48 md:w-56 lg:w-64 h-auto object-contain" />
+      <div class="flex justify-center mb-6 md:mb-5">
+        <img src="@/assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-48 md:w-56 lg:w-70 h-auto object-contain" />
       </div>
 
       <!-- TITRE PRINCIPAL -->
@@ -34,31 +34,26 @@
       </h1>
 
       <!-- SECTION DESCRIPTION + IMAGE -->
-      <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12 mb-8 md:mb-12">
+      <div class="flex flex-col  justify-center  items-center w-full lg:flex-row   gap-8 lg:gap-20 mb-8 md:mb-12">
 
         <!-- DESCRIPTION (Gauche sur desktop, haut sur mobile) -->
-        <div class="flex-1 text-center lg:text-left max-w-xl">
-          <p class="text-white text-sm md:text-base lg:text-lg leading-relaxed opacity-95">
+        <div class="flex justify-center items-center text-center   w-1/2 lg:text-center max-w-xl">
+          <p class="  text-white text-sm md:text-base lg:text-lg leading-relaxed opacity-95">
             Faites un suivi de votre stock, en contrôlant vos dépenses
             et ressortez votre compte de résultat, vos charges, vos
             produits, et votre bénéfice
           </p>
         </div>
 
-        <!-- IMAGE INTERFACE (Droite sur desktop, bas sur mobile) -->
-        <div class="flex-shrink-0 relative text-end">
 
-
-          <img src="@/assets/image/interface.png" alt="Aperçu des interfaces"
-            class="w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl h-auto drop-shadow-2xl rounded-lg" />
-        </div>
       </div>
 
 
       <!-- CTA -->
       <!-- Texte du lien à gauche -->
-      <div class="flex w-10/15 text-center md:text-left">
-        <a href="#" class="inline-block group">
+      <div class="flex  justify-center items-center gap-20 w-full text-center md:text-center ">
+
+        <a href="#" class="group  flex-col gap-1 justify-center ">
           <p class="text-[#6500F3] font-bold text-xl md:text-2xl mb-2 hover:underline">
             Cliquez pour suivre le lien
           </p>
@@ -68,8 +63,15 @@
             <span class="text-3xl md:text-4xl animate-bounce">✨👌</span>
           </p>
         </a>
+
       </div>
 
+    </div>
+    <div class="flex relative justify-end p-2  px-4 text-left">
+
+
+      <img src="@/assets/image/interface.png" alt="Aperçu des interfaces"
+        class="w-50 h-auto drop-shadow-2xl rounded-lg" />
     </div>
   </header>
 
@@ -356,7 +358,7 @@
             class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-gray-400 resize-none"
             required></input>
         </div>
-   
+
         <!-- Bouton d'envoi -->
         <button type="submit"
           class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200">
@@ -421,113 +423,109 @@
   </section>
 
   <!-- Footer noir -->
-<footer class="w-full bg-[#000000] text-white py-12">
-  <div class="max-w-7xl mx-auto px-4 md:px-6">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
-      <!-- Logo et description -->
-      <div class="space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
-        <div class="w-20 h-20 md:w-24 md:h-24">
-          <img 
-            src="./../assets/image/OBJECTS.png" 
-            alt="SG-Stocks Logo" 
-            class="w-full h-full object-contain"
-          >
+  <footer class="w-full bg-[#000000] text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
+        <!-- Logo et description -->
+        <div class="space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
+          <div class="w-20 h-20 md:w-24 md:h-24">
+            <img src="./../assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-full h-full object-contain">
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+            Contactez-nous pour entrer en possession de votre logiciel.
+          </p>
+          <div class="flex gap-3 justify-center md:justify-start">
+            <a href="#"
+              class="w-9 h-9 bg-white/10 hover:bg-[#0EA5E9] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+              aria-label="Facebook">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 hover:bg-[#0EA5E9] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+              aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 hover:bg-[#0EA5E9] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+              aria-label="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+          </div>
         </div>
-        <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
-          Contactez-nous pour entrer en possession de votre logiciel.
+
+        <!-- Services -->
+        <div class="space-y-4 text-center md:text-left">
+          <h3 class="text-base md:text-lg font-bold text-white">Services</h3>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li>
+              <a href="#" class="hover:text-[#0EA5E9] transition-colors inline-block hover:translate-x-1 duration-300">
+                Logiciel comptable
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0EA5E9] transition-colors inline-block hover:translate-x-1 duration-300">
+                Suivi et maintenance logicielle
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0EA5E9] transition-colors inline-block hover:translate-x-1 duration-300">
+                Formation sur le logiciel
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="space-y-4 text-center md:text-left">
+          <h3 class="text-base md:text-lg font-bold text-white">Contact Info</h3>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li class="flex items-center gap-2 justify-center md:justify-start">
+              <svg class="w-4 h-4 text-[#0EA5E9] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              <a href="tel:+237693293817" class="hover:text-[#0EA5E9] transition-colors">
+                +237 693 293 817
+              </a>
+            </li>
+            <li class="flex items-center gap-2 justify-center md:justify-start">
+              <svg class="w-4 h-4 text-[#0EA5E9] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+              <a href="mailto:info@leogicom.com" class="hover:text-[#0EA5E9] transition-colors">
+                info@leogicom.com
+              </a>
+            </li>
+            <li class="flex items-center gap-2 justify-center md:justify-start">
+              <svg class="w-4 h-4 text-[#0EA5E9] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span>Douala, Cameroun</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-6 md:pt-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-xs md:text-sm">
+          © 2025 Leogicom. All rights reserved.
         </p>
-        <div class="flex gap-3 justify-center md:justify-start">
-          <a href="#"
-            class="w-9 h-9 bg-white/10 hover:bg-[#0EA5E9] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-            aria-label="Facebook">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-            </svg>
-          </a>
-          <a href="#"
-            class="w-9 h-9 bg-white/10 hover:bg-[#0EA5E9] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-            aria-label="Twitter">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-            </svg>
-          </a>
-          <a href="#"
-            class="w-9 h-9 bg-white/10 hover:bg-[#0EA5E9] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-            aria-label="LinkedIn">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Services -->
-      <div class="space-y-4 text-center md:text-left">
-        <h3 class="text-base md:text-lg font-bold text-white">Services</h3>
-        <ul class="space-y-3 text-gray-400 text-sm">
-          <li>
-            <a href="#" class="hover:text-[#0EA5E9] transition-colors inline-block hover:translate-x-1 duration-300">
-              Logiciel comptable
-            </a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-[#0EA5E9] transition-colors inline-block hover:translate-x-1 duration-300">
-              Suivi et maintenance logicielle
-            </a>
-          </li>
-          <li>
-            <a href="#" class="hover:text-[#0EA5E9] transition-colors inline-block hover:translate-x-1 duration-300">
-              Formation sur le logiciel
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="space-y-4 text-center md:text-left">
-        <h3 class="text-base md:text-lg font-bold text-white">Contact Info</h3>
-        <ul class="space-y-3 text-gray-400 text-sm">
-          <li class="flex items-center gap-2 justify-center md:justify-start">
-            <svg class="w-4 h-4 text-[#0EA5E9] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg>
-            <a href="tel:+237693293817" class="hover:text-[#0EA5E9] transition-colors">
-              +237 693 293 817
-            </a>
-          </li>
-          <li class="flex items-center gap-2 justify-center md:justify-start">
-            <svg class="w-4 h-4 text-[#0EA5E9] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-            </svg>
-            <a href="mailto:info@leogicom.com" class="hover:text-[#0EA5E9] transition-colors">
-              info@leogicom.com
-            </a>
-          </li>
-          <li class="flex items-center gap-2 justify-center md:justify-start">
-            <svg class="w-4 h-4 text-[#0EA5E9] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                clip-rule="evenodd" />
-            </svg>
-            <span>Douala, Cameroun</span>
-          </li>
-        </ul>
       </div>
     </div>
-
-    <!-- Copyright -->
-    <div class="pt-6 md:pt-8 border-t border-gray-800 text-center">
-      <p class="text-gray-500 text-xs md:text-sm">
-        © 2025 Leogicom. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
 
