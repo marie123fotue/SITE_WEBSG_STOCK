@@ -3,7 +3,7 @@
 
  
         <main class="relative overflow-hidden flex flex-col text-black
-       w-[270px] sm:w-[280px] md:w-[300px] lg:w-[320px] min-h-[600px] h-[680px]
+       w-[270px] sm:w-[280px] md:w-[300px] lg:w-[320px] min-h-full md:h-[680px]
        font-[Poppins] bg-white rounded-[10px] border-[2px] shadow-lg border-r-[#153ABF] border-t-[#153ABF] border-b-[#153ABF] border-l-[#2B59FF]
        hover:bg-[#000B6B] hover:shadow-2xl hover:-translate-y-4
        transition-all duration-500 group  ">
@@ -108,8 +108,8 @@
 
                 <!-- Bouton et footer -->
                 <div class="flex flex-col items-center gap-2 mt-auto">
-                    <button class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[6px] px-4
-                       text-[14px] font-semibold group-hover:bg-[#f5d06c] transition-colors">
+                    <button class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[5px] md:py-[6px] px-4
+                       text-[12px] md:text-[14px] font-semibold group-hover:bg-[#f5d06c] transition-colors">
                         Essai gratuit pendant 14 jours
                     </button>
 

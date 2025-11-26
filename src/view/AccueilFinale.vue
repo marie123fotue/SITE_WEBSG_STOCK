@@ -1,465 +1,508 @@
 <template>
-    <!-- Entete de la page  -->
+
+  <!-- Entete de la page avec animation vanta  -->
+
+  <div ref="haloRef" class="w-full  md:h-screen h-[400px] z-40 overflow-hidden">
+
     <header id="accueil"
-        class="flex flex-col relative w-full min-h-screen md:min-h-[400px] lg:min-h-[500px] overflow-hidden font-[Poppins] bg-[#33268F] text-white">
+      class="flex flex-col z-50 w-full md:min-h-[400px] lg:min-h-[500px] overflow-hidden font-[Poppins]  text-white">
 
-        <!-- Dégradé positionné en haut a gauche-->
-        <div class="overflow-hidden absolute inset w-[100px] h-1/2 bg-[#FE7098] blur-[120px] rounded-full top-0"></div>
+      <!-- Dégradé positionné en haut a gauche-->
+      <div class="overflow-hidden absolute inset w-[200px] h-1/2 bg-[#FE7098] blur-[135px] rounded-full top-0"></div>
+      <div class="overflow-hidden absolute inset w-[200px] h-1/2 bg-gray-100 blur-[145px] rounded-full top-0 right-0">
+      </div>
+      <div 
+        class="overflow-hidden absolute inset w-[200px] h-1/2 bg-[#1671CD] blur-[145px] rounded-full  bottom-0  right-190">
+      </div>
+      <div class="overflow-hidden absolute inset w-full h-1/8 bg-[#2216cd] blur-[135px] rounded-full  top-0  right-190">
+      </div>
 
-        <!-- Navigation Bar -->
-        <nav class="relative z-50 w-full px-4 md:px-8 lg:px-12 py-6">
-            <div class="flex justify-between items-center">
+      <!-- Barre de navigation -->
+      <nav class="relative z-50 w-full px-4 md:px-6 lg:px-10 py-4 bg-white text-gray-800">
 
-                <!-- Logo à gauche -->
-                <div class="flex items-center">
-                    <img src="@/assets/image/OBJECTS.png" alt="SG-Stocks Logo"
-                        class="w-40 md:w-48 lg:w-52 h-auto object-contain" />
-                </div>
+        <div class="flex justify-between items-center">
 
-                <!-- Menu Desktop + User Profile à droite -->
-                <div class="hidden md:flex items-center gap-6 lg:gap-8">
-                    <ul class="flex text-white items-center text-[16px] gap-4 lg:gap-6">
-                        <li>
-                            <a href="#accueil"
-                                class="hover:text-[#0FDBD0] duration-300 hover:scale-105 cursor-pointer transition-all">
-                                Accueil
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#Apropos"
-                                class="hover:text-[#0FDBD0] duration-300 hover:scale-105 cursor-pointer transition-all">
-                                A propos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#projets"
-                                class="hover:text-[#0FDBD0] duration-300 hover:scale-105 cursor-pointer transition-all">
-                                Projets
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact"
-                                class="hover:text-[#0FDBD0] duration-300 hover:scale-105 cursor-pointer transition-all">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
+          <!-- Logo à gauche -->
+          <div class="flex items-center">
+            <img src="./../assets/image/logo.svg" alt="SG-Stocks Logo"
+              class="w-45 md:w-48 lg:w-55 h-auto object-contain" />
+          </div>
 
-                    <!-- User Profile Button -->
-                    <div class="relative">
-                        <button @click="userMenuOpen = !userMenuOpen"
-                            class="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg transition-all duration-300 border border-white/20">
-                            <!-- User Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                            </svg>
+          <!-- Menu Desktop + User Profile à droite -->
+          <div class="hidden md:flex items-center gap-6 lg:gap-8">
+            <ul class="flex text-gray-800 font-semibold items-center text-[16px] gap-4 lg:gap-6">
+              <li>
+                <a href="#accueil"
+                  class=" hover:rounded-full  border-0 hover:bg-[#0FDBD0]  hover:py-2 hover:px-4  hover:text-black duration-500  cursor-pointer transition-all">
+                  Accueil
+                </a>
+              </li>
+              <li>
+                <a href="#Apropos"
+                  class="hover:rounded-full  border-0 hover:bg-[#0FDBD0]  hover:py-2 hover:px-4  hover:text-black duration-500 hover:scale-105 cursor-pointer transition-all">
+                  A propos
+                </a>
+              </li>
+              <li>
+                <a href="#tarifs"
+                  class="hover:rounded-full  border-0 hover:bg-[#0FDBD0]  hover:py-2 hover:px-4  hover:text-black duration-500 hover:scale-105 cursor-pointer transition-all">
+                  Tarifs
+                </a>
+              </li>
+              <li>
+                <a href="#contact"
+                  class="hover:rounded-full  border-0 hover:bg-[#0FDBD0]  hover:py-2 hover:px-4  hover:text-black duration-500 hover:scale-105 cursor-pointer transition-all">
+                  Contact
+                </a>
+              </li>
+            </ul>
 
-                            <!-- User Name or Guest -->
-                            <span class="text-sm font-medium">{{ isConnected ? userName : 'Invité' }}</span>
-                            <!-- Dropdown Icon -->
-                            <svg class="w-4 h-4 transition-transform duration-300"
-                                :class="{ 'rotate-180': userMenuOpen }" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
+            <!-- User Profile Button -->
+            <div class="relative">
+               <RouterLink to="/connexion"
+                     class="flex items-center gap-2 bg-blue-400 hover:bg-blue-500 backdrop-blur-sm px-4 py-2 rounded-[15px] transition-all duration-500 border border-white/20">
+                <!-- User Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
 
-                        <!-- User Dropdown Menu -->
-                        <transition enter-active-class="transition duration-200 ease-out"
-                            enter-from-class="opacity-0 scale-95" enter-to-class="opacity-100 scale-100"
-                            leave-active-class="transition duration-150 ease-in"
-                            leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
-                            <div v-if="userMenuOpen"
-                                class="absolute right-0 mt-2 w-56 bg-[#1a1548] backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl py-2 overflow-hidden">
-                                <div v-if="isConnected">
-                                    <!-- User Info -->
-                                    <div class="px-4 py-3 border-b border-white/10">
-                                        <p class="text-sm font-semibold">{{ userName }}</p>
-                                        <p class="text-xs text-white/60">{{ userEmail }}</p>
-                                    </div>
-                                    <!-- Logout Button -->
-                                    <button @click="handleLogout"
-                                        class="w-full text-left px-4 py-3 hover:bg-white/10 transition-all duration-300 flex items-center gap-3 text-red-300 hover:text-red-200">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                        </svg>
-                                        Se déconnecter
-                                    </button>
-                                </div>
-                                <div v-else>
-                                    <!-- Login Button -->
-                                    <button @click="handleLogin"
-                                        class="w-full text-left px-4 py-3 hover:bg-white/10 transition-all duration-300 flex items-center gap-3">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                                        </svg>
-                                        Se connecter
-                                    </button>
-                                </div>
-                            </div>
-                        </transition>
+                <!-- User Name or Guest -->
+                <span class="text-sm font-medium">Se Connecter</span>
+               </RouterLink>
+           
+
+          
+
+              <!-- User Dropdown Menu -->
+              <transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 scale-95"
+                enter-to-class="opacity-100 scale-100" leave-active-class="transition duration-150 ease-in"
+                leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
+                <div v-if="userMenuOpen"
+                  class="absolute right-0 mt-2 w-56 bg-[#1a1548] backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl py-2 overflow-hidden">
+                  <div v-if="isConnected">
+                    <!-- User Info -->
+                    <div class="px-4 py-3 border-b border-white/10">
+                      <p class="text-sm font-semibold">{{ userName }}</p>
+                      <p class="text-xs text-white/60">{{ userEmail }}</p>
                     </div>
+                    <!-- Logout Button -->
+                    <button @click="handleLogout"
+                      class="w-full text-left px-4 py-3 hover:bg-white/10 transition-all duration-300 flex items-center gap-3 text-red-300 hover:text-red-200">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                      </svg>
+                      Se déconnecter
+                    </button>
+                  </div>
+                  <div v-else>
+                    <!-- Login Button -->
+                    <button @click="handleLogin"
+                      class="w-full text-left px-4 py-3 hover:bg-white/10 transition-all duration-300 flex items-center gap-3">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                      </svg>
+                      Se connecter
+                    </button>
+                  </div>
                 </div>
+              </transition>
+            </div>
+          </div>
 
-                <!-- Menu Mobile Toggle -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen"
-                    class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-all duration-300">
-                    <svg v-if="!mobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg v-else class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+          <!-- Menu Mobile Toggle -->
+          <button @click="mobileMenuOpen = !mobileMenuOpen"
+            class="md:hidden text-black p-2 hover:bg-white/10 rounded-lg transition-all duration-300">
+            <svg v-if="!mobileMenuOpen" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg v-else class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+
+        <!-- Menu Mobile Sidebar -->
+        <transition enter-active-class="transition duration-300 ease-out" enter-from-class="opacity-0 -translate-x-full"
+          enter-to-class="opacity-100 translate-x-0" leave-active-class="transition duration-300 ease-in"
+          leave-from-class="opacity-100 translate-x-0" leave-to-class="opacity-0 -translate-x-full">
+          <div v-if="mobileMenuOpen" class="md:hidden fixed inset-0 z-50">
+            <!-- Overlay -->
+            <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+            <!-- Sidebar Menu -->
+            <div class="absolute left-0 top-0 h-full w-72 bg-[#1a1548] shadow-2xl text-white">
+              <!-- Header avec fermeture -->
+              <div class="flex justify-between items-center p-6 border-b border-white/10">
+                <h2 class="text-xl font-bold">Menu</h2>
+                <button @click="mobileMenuOpen = false"
+                  class="text-white p-2 hover:bg-white/10 rounded-lg transition-all">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </button>
-            </div>
+              </div>
 
-            <!-- Menu Mobile Sidebar -->
-            <transition enter-active-class="transition duration-300 ease-out"
-                enter-from-class="opacity-0 -translate-x-full" enter-to-class="opacity-100 translate-x-0"
-                leave-active-class="transition duration-300 ease-in" leave-from-class="opacity-100 translate-x-0"
-                leave-to-class="opacity-0 -translate-x-full">
-                <div v-if="mobileMenuOpen" class="md:hidden fixed inset-0 z-50">
-                    <!-- Overlay -->
-                    <div @click="mobileMenuOpen = false" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-
-                    <!-- Sidebar Menu -->
-                    <div class="absolute left-0 top-0 h-full w-72 bg-[#1a1548] shadow-2xl">
-                        <!-- Header avec fermeture -->
-                        <div class="flex justify-between items-center p-6 border-b border-white/10">
-                            <h2 class="text-xl font-bold">Menu</h2>
-                            <button @click="mobileMenuOpen = false"
-                                class="text-white p-2 hover:bg-white/10 rounded-lg transition-all">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <!-- User Info Section -->
-                        <div class="p-6 border-b border-white/10">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-[#FE7098] flex items-center justify-center text-xl font-bold">
-                                    {{ isConnected ? userName.charAt(0).toUpperCase() : 'I' }}
-                                </div>
-                                <div>
-                                    <p class="font-semibold">{{ isConnected ? userName : 'Invité' }}</p>
-                                    <p class="text-xs text-white/60">{{ isConnected ? 'Bienvenue !' : 'Non connecté' }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Navigation Links -->
-                        <div class="p-4">
-                            <ul class="flex flex-col gap-2">
-                                <li>
-                                    <a href="#accueil"
-                                        class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                                        </svg>
-                                        Accueil
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#Apropos"
-                                        class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        A propos
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#projets"
-                                        class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                        </svg>
-                                        Projets
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#competences"
-                                        class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                                        </svg>
-                                        Compétences
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#contact"
-                                        class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Login/Logout Button -->
-                        <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
-                            <button v-if="!isConnected" @click="handleLogin"
-                                class="w-full flex items-center justify-center gap-2 bg-[#00A8E8] hover:bg-[#0090CC] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                                </svg>
-                                Se connecter
-                            </button>
-                            <button v-else @click="handleLogout"
-                                class="w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                                </svg>
-                                Se déconnecter
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </transition>
-        </nav>
-
-        <!-- CONTENU PRINCIPAL -->
-        <div class="relative z-30 container mx-auto px-4 md:px-6 lg:px-8 pt-12 md:pt-15 pb-12">
-
-            <!-- TITRE PRINCIPAL -->
-            <h1 class="text-center font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-4 md:mb-6 leading-tight">
-                Simplifiez votre comptabilité
-                <br class="hidden sm:block" />
-                <span class="block mt-2">avec SG-STOCK</span>
-            </h1>
-
-            <!-- SECTION DESCRIPTION + IMAGE -->
-            <div class="flex flex-col justify-center items-center w-full lg:flex-row gap-8 lg:gap-20 mb-8 md:mb-12">
-
-                <!-- DESCRIPTION (Gauche sur desktop, haut sur mobile) -->
-                <div class="flex justify-center items-center text-center w-full md:w-1/2 lg:text-center max-w-xl">
-                    <p class="text-white text-sm md:text-base lg:text-lg leading-relaxed opacity-95">
-                        Faites un suivi de votre stock, en contrôlant vos dépenses
-                        et ressortez votre compte de résultat, vos charges, vos
-                        produits, et votre bénéfice
+              <!-- User Info Section -->
+              <div class="p-6 border-b text-white border-white/10">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full bg-[#FE7098] flex items-center justify-center text-xl font-bold">
+                    {{ isConnected ? userName.charAt(0).toUpperCase() : 'I' }}
+                  </div>
+                  <div>
+                    <p class="font-semibold">{{ isConnected ? userName : 'Invité' }}</p>
+                    <p class="text-xs text-white/60">{{ isConnected ? 'Bienvenue !' : 'Non connecté' }}
                     </p>
+                  </div>
                 </div>
+              </div>
 
-            </div>
-
-            <!-- CTA -->
-            <div>
-                <!-- Texte du lien à gauche -->
-                <div class="flex justify-center items-center gap-20 w-full text-center md:text-center text-[#0090CC]">
-
-                    <a href="#" class="group flex-col gap-1 justify-center">
-                        <p class="font-bold text-xl md:text-2xl mb-2 group-hover:underline">
-                            Cliquez pour suivre le lien
-                        </p>
-                        <div
-                            class="font-bold text-xl md:text-2xl flex items-center justify-center md:justify-start gap-2">
-                            <p
-                                class="group-hover:underline font-bold text-xl md:text-2xl flex items-center justify-center md:justify-start gap-2">
-                                pour la phase test</p>
-                            <span class="text-3xl md:text-4xl animate-bounce">✨👌</span>
-                        </div>
+              <!-- Navigation Links -->
+              <div class="p-4 ">
+                <ul class="flex flex-col gap-2 text-white">
+                  <li>
+                    <a href="#accueil"
+                      class="flex items-center gap-3 py-3 px-4  hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                      Accueil
                     </a>
+                  </li>
+                  <li>
+                    <a href="#Apropos"
+                      class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      A propos
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#tarifs"
+                      class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                      Tarifs
+                    </a>
+                  </li>
+                 
+                  <li>
+                    <a href="#contact"
+                      class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-                </div>
-                <div class="flex relative justify-center md:justify-end p-2 px-4 text-left">
-                    <img src="@/assets/image/interface.png" alt="Aperçu des interfaces"
-                        class="w-full md:w-auto max-w-xl h-auto drop-shadow-2xl rounded-lg" />
-                </div>
+              <!-- Login/Logout Button -->
+              <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
+                <button v-if="!isConnected" @click="handleLogin"
+                  class="w-full flex items-center justify-center gap-2 bg-[#00A8E8] hover:bg-[#0090CC] text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                  </svg>
+                  Se connecter
+                </button>
+                <button v-else @click="handleLogout"
+                  class="w-full flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                  Se déconnecter
+                </button>
+              </div>
             </div>
+          </div>
+        </transition>
+      </nav>
+      <hr class="mt-0 bg-gray-500 h-[5px]">
+
+      <!-- CONTENU PRINCIPAL -->
+      <div class="relative z-30 container mt-8 mx-auto pt-1 px-4 md:px-6 lg:px-8  md:pt-15 pb-12">
+
+        <!-- TITRE PRINCIPAL -->
+        <h1
+          class="text-center  text-white font-extrabold text-[30px] md:text-[50px] lg:text-[60px]  mb-4 md:mb-6 leading-tight">
+          Simplifiez votre comptabilité
+          <br class="hidden sm:block" />
+          <span class="block mt-2">avec SG-STOCK</span>
+        </h1>
+
+        <!-- SECTION DESCRIPTION + IMAGE -->
+        <div class="flex flex-col justify-center items-center w-full lg:flex-row gap-8 lg:gap-20 mb-8 md:mb-12">
+
+          <!-- DESCRIPTION (Gauche sur desktop, haut sur mobile) -->
+          <div class="flex justify-center items-center text-center w-full md:w-1/2 lg:text-center max-w-xl">
+            <p class="text-white text-[15px] md:text-[30px] lg:text-[20px] font-semibold leading-relaxed opacity-95">
+              Faites un suivi de votre stock, en contrôlant vos dépenses
+              et ressortez votre compte de résultat, vos charges, vos
+              produits, et votre bénéfice
+            </p>
+          </div>
 
         </div>
+
+        <!-- CTA -->
+        <div class="flex ">
+          <!-- Texte du lien à gauche -->
+          <div class="flex justify-center items-center  w-full text-center md:text-center text-blue-600">
+
+            <a href="#" class="group flex-col gap-1 justify-center animate-bounce">
+              <p class="font-bold text-xl md:text-2xl mb-2 group-hover:underline">
+                Cliquez pour suivre le lien
+              </p>
+              <div class="font-bold text-xl md:text-2xl flex items-center justify-center md:justify-start gap-2">
+                <p
+                  class="group-hover:underline font-bold text-xl md:text-2xl flex items-center justify-center md:justify-start gap-2">
+                  pour la phase test</p>
+                <span class="text-3xl md:text-4xl ">✨👌</span>
+              </div>
+            </a>
+
+          </div>
+
+
+          <div class="hidden md:flex items-center justify-end mb-4  text-left ">
+            <img src="@/assets/image/interface.png" alt="Aperçu des interfaces"
+              class="w-[150px] h-[150px] translate-y-6" />
+          </div>
+        </div>
+
+      </div>
 
     </header>
-    
-  <!-- Slider images -->
-  <div class="overflow-hidden relative w-full h-[200px] md:h-[300px] p-4 mx-auto font-[Poppins]">
   </div>
-    <!-- Section À Propos -->
-    <section id="Apropos" class="min-h-screen bg-gray-900 py-20 px-6 text-white">
-        <div class="max-w-7xl mx-auto">
 
-            <!-- Titre de la section -->
-            <div class="text-center mb-10">
-                <h2 class="text-5xl md:text-6xl font-bold  mb-4">
-                    À Propos de <span class="text-[#0FDBD0]">Nous</span>
-                </h2>
-                <div class="w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
+  <!-- Slider images -->
+  <div class="bg-gray-200">
+    <div class="carousel-full">
+      <Carousel3d ref="carousel" :controls-visible="true" :controls-prev-html="'&#10092;'"
+        :controls-next-html="'&#10093;'" :controls-width="30" :controls-height="140" :clickable="true" :space="160"
+        :display="16" :width="400" :height="250" :border="0" :perspective="50" :inverse-scaling="3">
+        <Slide v-for="(img, i) in mesImages" :key="i" :index="i">
+          <img :src="img" class="carousel-img" />
+        </Slide>
+      </Carousel3d>
+    </div>
+  </div>
+  <!-- Section À Propos -->
+  <section id="Apropos" class="min-h-screen bg-gray-800  py-20 px-6 text-white">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Titre de la section -->
+      <div class="text-center mb-10">
+        <h2 class="text-5xl md:text-6xl font-bold  mb-4">
+          À Propos de <span class="text-[#0FDBD0]">Nous</span>
+        </h2>
+        <div class="w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Contenu principal -->
+      <div class="grid md:grid-cols-2 md:gap-12 gap-8 justify-center items-center mb-8">
+
+        <!-- Partie Gauche - Texte -->
+        <div class="flex-1 flex-col ">
+
+          <!-- Introduction -->
+          <div
+            class="bg-white/5 rounded-2xl p-8 border  border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
+            <h3 class="text-3xl font-bold mb-4 flex items-center gap-3">
+              <span class="text-[#0FDBD0]">👋</span>Qui Sommes Nous ?
+            </h3>
+            <div class="flex flex-col gap-4 text-lg leading-relaxed">
+              <p>
+                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
+                conçue pour optimiser la gestion globale de votre entreprise.
+              </p>
+              <p>
+                Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
+                l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
+                SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
+              </p>
+              <p>
+                Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
+              </p>
             </div>
+          </div>
 
-            <!-- Contenu principal -->
-            <div class="grid md:grid-cols-2 md:gap-12 gap-8 justify-center items-center mb-8">
-
-                <!-- Partie Gauche - Texte -->
-                <div class="flex-1 flex-col ">
-
-                    <!-- Introduction -->
-                    <div
-                        class="bg-white/5  rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-                        <h3 class="text-3xl font-bold t mb-4 flex items-center gap-3">
-                            <span class="text-[#0FDBD0]">👋</span> Bonjour !
-                        </h3>
-                        <p class=" text-lg leading-relaxed">
-                            Je suis <span class="text-[#0FDBD0] font-semibold">Marie Shalice</span>,
-                            une développeuse fullstack junior passionnée par la création d'expériences web
-                            modernes et intuitives. Je transforme des idées en applications fonctionnelles
-                            et esthétiques.
-                        </p>
-                    </div>
-                    <div
-                        class=" mt-3 bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30  hover:border-[#0FDBD0]/60 transition-all duration-300">
-                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-                            </svg>
-                            Mes aspirations
-                        </h3>
-                        <p class=" text-[16px] leading-relaxed">
-                            Mon objectif est de devenir une développeuse fullstack confirmée, capable de
-                            concevoir des solutions complètes et innovantes. Je souhaite continuer à apprendre
-                            les dernières technologies, contribuer à des projets open source, et créer des
-                            applications qui ont un impact positif sur la vie des utilisateurs.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Nos fonctionnalites -->
-                <div
-                    class=" flex-1 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                        </svg>
-                     Nos Fonctionnalités
-                    </h3>
-                    <ul class="space-y-3  gap-4 grid md:grid-cols-2 ">
-                        <li v-for="(fonct, index) in fonctionnalites" :key="index" :fonct="fonct" class="flex items-center gap-4 text-[16px]">
-                            <span class="text-[#0FDBD0] text-xl mt-1">✓</span>
-                            <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
-                        </li>
-                       
-                    
-                       
-                        <li v-for="(fonct, index) in fonctionnalites1" :key="index" :fonct="fonct" class="flex items-center gap-4 text-[16px]">
-                            <span class="text-[#0FDBD0] text-xl mt-1">✓</span>
-                            <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
-                        </li>
-                       
-                    </ul>
-                </div>
-
+          <div
+            class="mt-3  bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
+            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+              </svg>
+              Pourquoi nous choisir
+            </h3>
+            <div class="flex flex-col gap-4 text-[16px] leading-relaxed">
+              <p>
+                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
+                élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
+                prise en main rapide, réduisant le temps de formation de vos équipes.
+              </p>
+              <p>
+                Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
+                des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
+              </p>
+              <p>
+                Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
+                éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
+                hébergement sécurisé.
+              </p>
+              <p>
+                Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
+                entreprise.
+              </p>
             </div>
-
+          </div>
         </div>
-    </section>
+
+        <!-- Nos fonctionnalites -->
+        <div
+          class=" flex-1 bg-white/5   backdrop-blur-sm rounded-2xl gap-3  p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
+          <h3 class="text-2xl font-bold text-white mb-4 flex justify-center w-full items-center gap-3 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+            </svg>
+            Nos Fonctionnalités
+          </h3>
+          <ul class="space-y-3  gap-4 grid md:grid-cols-2 ">
+            <li v-for="(fonct, index) in fonctionnalites" :key="index" :fonct="fonct"
+              class="flex items-center gap-4 text-[16px]">
+              <!-- <span class="text-[#0FDBD0] text-xl mt-1">✓</span> -->
+              <button class="w-[30px] h-[30px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5  text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
+            </li>
+
+
+
+            <li v-for="(fonct, index) in fonctionnalites1" :key="index" :fonct="fonct"
+              class="flex items-center gap-4 text-[16px]">
+              <!-- <span class="text-[#0FDBD0] text-xl mt-1">✓</span> -->
+              <button class="w-[30px] h-[30px] rounded-full bg-[#0736CF] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </button>
+              <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
 
 
 
   <!-- Image fonctionnalités -->
 
-  <section class="bg-white flex  flex-col gap-3 font-[Poppins] mt-8">
-    <div class="max-w-4xl mx-auto text-center  gap-1">
+  <section class="bg-white flex justify-center items-center  flex-col gap-3 font-[Poppins] mt-8">
+    <div class="max-w-4xl md:mx-auto text-center  gap-1 mx-1">
       <h2 class="text-xl md:text-2xl font-bold mb-1 text-black">
         Voici trois critères convaincants qui pourraient vous
       </h2>
-      <h2 class="text-[15px] md:text-2xl font-bold mb-1 text-black"> inciter vous grande entreprise ou petite
+      <h2 class="text-xl md:text-2xl font-bold mb-1 text-black"> inciter vous grande entreprise ou petite
         commerçants à
       </h2>
-      <h2 class="text-[15px] md:text-2xl font-bold mb-1 text-black">adopter notre logiciel de gestion comptable, de
+      <h2 class="text-xl md:text-2xl font-bold mb-1 text-black">adopter notre logiciel de gestion comptable, de
         stock et
       </h2>
-      <h2 class="text-[15px] md:text-2xl font-bold mb-1 text-black"> commercial en 3 en 1</h2>
+      <h2 class="text-xl md:text-2xl font-bold mb-1 text-black"> commercial en 3 en 1</h2>
     </div>
 
-    <div class="flex justify-around gap-20 mb-10 px-8 bg-white">
-      <!-- Fonctionnalité 1 -->
-      <div class="flex flex-col items-center max-w-[270px]">
-        <div class="w-full h-[200px] flex items-center justify-center">
-          <img src="./../assets/image/Group.png" alt="">
-        </div>
-        <div class="flex flex-col gap-5">
-          <h2 class="text-[14px] md:text-[18px] font-bold  text-black flex ">Suivie de stock en temps réel </h2>
-          <p class="text-[15px]  text-center text-gray-700">
-            Alertes automatiques, tableaux de bord dynamiques,
-            et génération de rapports instantanés pour une prise de
+
+    <div class="w-full bg-white py-12 px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-15 max-w-6xl mx-auto">
+
+        <!-- Fonctionnalité 1 -->
+        <div class="flex flex-col items-center h-full">
+          <div class="w-full h-[200px] flex items-center justify-center mb-5">
+            <img src="./../assets/image/Group.png" alt="Suivi de stock" class="max-w-full h-auto">
+          </div>
+          <h2 class="text-base md:text-lg font-bold text-black text-center mb-4">
+            Suivi de stock en temps réel
+          </h2>
+          <p class="text-[16px] md:text-base text-gray-700 text-center">
+            Alertes automatiques, tableaux de bord dynamiques, et génération de rapports instantanés pour une prise de
             décision rapide et éclairée.
           </p>
-
         </div>
 
-      </div>
-
-      <!-- Fonctionnalité 2 -->
-      <div class="flex flex-col items-center max-w-[270px]">
-        <div class="w-full h-[200px] flex items-center justify-center">
-          <img src="./../assets/image/Group (1).png" alt="">
-        </div>
-
-        <div class="flex flex-col gap-5">
-          <h2 class="text-[14px] md:text-[18px] font-bold  text-black flex ">Suivie de stock en temps réel </h2>
-          <p class="text-[15px] mb-6 text-center text-gray-700">
-            Une image plus professionnelle (factures conformes, suivi client structuré),
-            une meilleure organisation, et des données fiables pour convaincre partenaires
-            ou investisseurs.
+        <!-- Fonctionnalité 2 -->
+        <div class="flex flex-col items-center h-full">
+          <div class="w-full h-[200px] flex items-center justify-center mb-5">
+            <img src="./../assets/image/Group (1).png" alt="Professionnalisme" class="max-w-full h-auto">
+          </div>
+          <h2 class="text-base md:text-lg font-bold text-black text-center mb-4">
+            Image professionnelle
+          </h2>
+          <p class="text-[16px] md:text-base text-gray-700 text-center">
+            Une image plus professionnelle (factures conformes, suivi client structuré), une meilleure organisation, et
+            des données fiables pour convaincre partenaires ou investisseurs.
           </p>
         </div>
-      </div>
 
-      <!-- Fonctionnalité 3 -->
-      <div class="flex flex-col items-center max-w-[250px]">
-        <div class="w-full h-[200px] flex items-center justify-center">
-          <img src="./../assets/image/Group (2).png" alt="">
-        </div>
-        <div class="flex flex-col gap-5">
-          <h2 class="text-[14px] md:text-[18px] font-bold  text-black flex ">Centralisation des opérations</h2>
-          <p class="text-[15px] mb-6 text-center text-gray-700">
-            Une seule plateforme pour gérer la comptabilité, le stock et les ventes,
-            ce qui réduit les erreurs, les doublons et les pertes de données.
+        <!-- Fonctionnalité 3 -->
+        <div class="flex flex-col items-center h-full">
+          <div class="w-full h-[200px] flex items-center justify-center mb-5">
+            <img src="./../assets/image/Group (2).png" alt="Centralisation" class="max-w-full h-auto">
+          </div>
+          <h2 class="text-base md:text-lg font-bold text-black text-center mb-4">
+            Centralisation des opérations
+          </h2>
+          <p class="text-[16px]md:text-base text-gray-700 text-center">
+            Une seule plateforme pour gérer la comptabilité, le stock et les ventes, ce qui réduit les erreurs, les
+            doublons et les pertes de données.
           </p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section class=" overflow-y-hidden  w-full flex justify-between  gap-40 h-[900px] bg-[#33268F] font-[Poppins] ">
+  <section id="tarifs"
+    class="  overflow-y-hidden  w-full h-fit bg-gradient-to-br from-indigo-800 via-purple-800 to-purple-900  flex justify-center items-center  pt-10 md:h-[900px]  font-[Poppins] ">
 
-    <!-- Dégradé positionné  en haut a gauche-->
-    <div class="w-[200px] h-[500px] relative overflow-hidden ">
-      <div class="absolute top-0 left-0 w-1/2 h-1/2 blur-[80px]   bg-[#FE7098] rounded-full"></div>
-    </div>
-    <div class="w-full flex flex-col gap-10">
+    <div class="w-full flex flex-col gap-10 lex justify-center items-center ">
 
-      <div class="flex flex-col justify-center items-center fixed-50">
-        <h2 class="w-full text-2xl md:text-2xl  text-center flex  justify-center font-bold mb-2 mt-5 text-white   ">
+      <div class="flex flex-col justify-center items-center fixed-50 mb-2 mt-7 md:mt-9 lg:md-12">
+        <h2
+          class="w-full text-2xl md:text-[35px]  text-center flex  justify-center font-bold  text-white  mb-1 mt-7 md:mt-9 lg:md-15   ">
           Nos Differents Plan</h2>
-        <img src="./../assets/image/trait.png" alt="" class="w-[200px] h-4">
+        <img src="./../assets/image/trait.png" alt="" class="w-[320px] h-8">
       </div>
-      <div class="flex flex-col gap-2 w-full">
 
-        <div class="w-full flex flex-col md:flex-row gap-6 justify-center items-center">
+      <div class="flex flex-col  justify-center items-center w-full">
+
+        <div class="w-full h-full flex  justify-center items-center  flex-col md:flex-row gap-8 ">
 
           <!-- <Paiement v-for="(plan, index) in planDb" :key="index" :plan="plan" /> -->
           <Paiement v-for="(plan, index) in planDb" :key="index" :plan="plan" />
@@ -470,26 +513,19 @@
           <div class="flex justify-start hover:scale-105 w-[100px] h-[100px] ">
             <img src="./../assets/image/carre .png" alt="">
           </div>
-          <div class="w-[200px] h-[200px] relative overflow-hidden rounded-full">
-            <!-- Dégradé blanc sans bordures visibles -->
-            <div class="absolute bg-white h-1/2 w-[150px] backdrop-blur-[60px] left-0 top-0 right-0 rounded-full"></div>
-          </div>
+
 
         </div>
 
       </div>
     </div>
-    <!-- Dégradé inversé en haut à droite -->
-    <div class="w-[300px] h-[800px] relative overflow-hidden">
 
-      <div class="absolute top-0 right-0 w-1/2 h-1/2 blur-[80px] bg-[#0802B7] rounded-full"></div>
-    </div>
 
 
   </section>
   <personne />
-  <footer class="w-full bg-gray-100 p-4 md:p-6">
-    <section class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 md:p-10">
+  <footer class="w-full bg-gray-100 p-4 md:p-6" id="contact">
+    <section  class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 md:p-10">
       <!-- Titre -->
       <div class="text-center mb-8">
         <h2 class="text-[#1F2937] text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
@@ -529,17 +565,17 @@
 
         <!-- Message -->
         <div class="relative">
-          <input type="text" v-model="form.message" placeholder="Your message..." rows="5"
+          <textarea type="text" v-model="form.message" placeholder="Your message..." rows="5"
             class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors duration-200 placeholder-gray-400 resize-none"
-            required></input>
+            required></textarea>
         </div>
 
         <!-- Bouton d'envoi -->
-        <button type="submit"
+        <RouterLink to="/connexion"> <button type="submit"
           class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200">
           Send Message
         </button>
-
+ </RouterLink>
         <!-- Lien -->
         <p class="text-center text-blue-600 font-medium mt-6">
           <a href="#" class="hover:underline inline-flex items-center gap-1">
@@ -598,16 +634,21 @@
   </section>
 
   <!-- Footer noir -->
-  <footer class="w-full bg-[#000000] text-white py-12">
+  <footer class="w-full  bg-[#000000] text-white py-12">
     <div class="max-w-7xl mx-auto px-4 md:px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
         <!-- Logo et description -->
-        <div class="space-y-4 flex flex-col items-center md:items-start text-center md:text-left">
+        <div class="space-y-4 flex flex-col justify-center items-center md:items-start text-center md:text-left">
           <div class="w-20 h-20 md:w-24 md:h-24">
             <img src="./../assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-full h-full object-contain">
           </div>
           <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
-            Contactez-nous pour entrer en possession de votre logiciel.
+            Contactez-nous pour entrer 
+
+
+          </p>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+            en possession de votre logiciel.
           </p>
           <div class="flex gap-3 justify-center md:justify-start">
             <a href="#"
@@ -638,9 +679,9 @@
         </div>
 
         <!-- Services -->
-        <div class="space-y-4 text-center md:text-left">
+        <div class="space-y-4  text-center md:text-left ">
           <h3 class="text-base md:text-lg font-bold text-white">Services</h3>
-          <ul class="space-y-3 text-gray-400 text-sm">
+          <ul class="space-y-3 text-gray-400 text-sm ">
             <li>
               <a href="#" class="hover:text-[#0EA5E9] transition-colors inline-block hover:translate-x-1 duration-300">
                 Logiciel comptable
@@ -703,14 +744,15 @@
   </footer>
 
 
+
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-
 import Paiement from './../components/paiementessaie.vue'
 import personne from '@/components/personne.vue';
 import { reactive } from 'vue';
+
 
 const mobileMenuOpen = ref(false)
 const userMenuOpen = ref(false)
@@ -762,60 +804,84 @@ const planDb = ref([
     ],
     comingSoon: ['gestion des depenses', 'Mouvement stocks', 'Suivre vos statistiques'],
   }]);
-  const fonctionnalites=ref([
-       'Gestion de stock','Gestion des ventes','Facturation', 'Caisse','Tableau de board','Emprunts', 'Dépenses'])
-   const fonctionnalites1=ref([
-       'Gestion des fournisseurs' ,'Gestion des Client', 'Enregistrement des mouvements','Bilan de résultat','Gestion Collaborateur'
-  ])
-  
+const fonctionnalites = ref([
+  'Gestion de stock muti-magasins', 'Gestion des Ventes', 'Gestion des produit et catalogue', 'Facturation', 'Gestion de la Caisse', 'Tableau de board Analytique', ' Gestions des Emprunts', ' Gestion Dépenses', 'Gestion des encaissements'])
+const fonctionnalites1 = ref([
+  'Gestion des fournisseurs', 'Gestion des Clients', 'Gestion des services et catalogue de service', 'Enregistrement des mouvements', 'Bilan de résultat', 'Gestion Collaborateur', 'Gestion des permissions Granulaires', 'Tableau de bord analytique', 'Gestion des decaissemnts'
+])
+
 
 // Toggle du menu utilisateur
 const toggleUserMenu = () => {
-    userMenuOpen.value = !userMenuOpen.value
+  userMenuOpen.value = !userMenuOpen.value
 }
 
 // Fermer le menu si on clique ailleurs
 const handleClickOutside = (event) => {
-    if (userMenuRef.value && !userMenuRef.value.contains(event.target)) {
-        userMenuOpen.value = false
-    }
+  if (userMenuRef.value && !userMenuRef.value.contains(event.target)) {
+    userMenuOpen.value = false
+  }
 }
 
 // Connexion
 const handleLogin = () => {
-    // Simuler la connexion (remplacez par votre vraie logique)
-    isConnected.value = true
-    userName.value = 'Charly'
-    userEmail.value = 'charly@sgstock.com'
-    
-    console.log('Connexion réussie')
-    mobileMenuOpen.value = false
-    userMenuOpen.value = false
-    
-    // Redirection vers la page de connexion si nécessaire
-    // window.location.href = '/login'
+  // Simuler la connexion (remplacez par votre vraie logique)
+  isConnected.value = true
+  userName.value = 'Charly'
+  userEmail.value = 'charly@sgstock.com'
+
+  console.log('Connexion réussie')
+  mobileMenuOpen.value = false
+  userMenuOpen.value = false
+
+  // Redirection vers la page de connexion si nécessaire
+  // window.location.href = '/login'
 }
 
 // Déconnexion
 const handleLogout = () => {
-    isConnected.value = false
-    userName.value = ''
-    userEmail.value = ''
-    
-    console.log('Déconnexion réussie')
-    mobileMenuOpen.value = false
-    userMenuOpen.value = false
+  isConnected.value = false
+  userName.value = ''
+  userEmail.value = ''
+
+  console.log('Déconnexion réussie')
+  mobileMenuOpen.value = false
+  userMenuOpen.value = false
 }
 
 // Ajouter l'écouteur de clic au montage du composant
 onMounted(() => {
-    document.addEventListener('click', handleClickOutside)
+  document.addEventListener('click', handleClickOutside)
 })
 
 // Retirer l'écouteur avant de détruire le composant
 onBeforeUnmount(() => {
-    document.removeEventListener('click', handleClickOutside)
+  document.removeEventListener('click', handleClickOutside)
 })
+
+const haloRef = ref(null);
+let vantaEffect = null;
+
+onMounted(() => {
+  // Vérifie que VANTA est chargé
+  if (window.VANTA) {
+    vantaEffect = window.VANTA.HALO({
+      el: haloRef.value,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      //  baseColor: 0x1bdb,
+      backgroundColor: 0x43659,
+      size: 1.7,
+    });
+  }
+});
+
+onBeforeUnmount(() => {
+  if (vantaEffect) vantaEffect.destroy(); // Nettoyage
+});
 
 
 const form = reactive({
@@ -837,5 +903,67 @@ function submitForm() {
   form.message = '';
 }
 
+import { Carousel3d, Slide } from 'vue3-carousel-3d'
+// Tableau de 20+ images 
+const mesImages = ref([
+  "src/assets/image/slides1/dashbord.svg",
+  "src/assets/image/slides1/client.svg",
+  "src/assets/image/slides1/Facturaction - Copie.svg",
+  "src/assets/image/slides1/statistique - Copie.svg",
+  "src/assets/image/slides1/Suivie fournisseur.svg",
+  "src/assets/image/slides1/flyers-de-sgstock.jpg",
+  "src/assets/image/slides1/Frame 1171275919.svg",
+  "src/assets/image/slides1/statistique vente mesuel.jpg",
+  "src/assets/image/slides1/carte-de-visite-sg-stocks.jpg",
+  "src/assets/image/slides1/client.svg",
+  "src/assets/image/slides1/dashbord - Copie.svg",
+  "src/assets/image/slides1/reglement emprunt.jpg",
+  "src/assets/image/slides1/Red and Yellow Modern Scholarship Program Instagram Post.png",
+  "src/assets/image/slides1/Desk-Macbook-pro-scene-Set-vol2.jpg",
+  "src/assets/image/slides1/enregistrement emprunt.jpg",
+  "src/assets/image/slides1/paiement.svg",
+  "src/assets/image/slides1/proccessu.svg",
+  "src/assets/image/slides1/bilan.svg",
+
+
+
+])
+
+const carousel = ref(null)
+let autoplayLoop = null
+
+onMounted(() => {
+  autoplayLoop = setInterval(() => {
+    carousel.value.goNext()
+  }, 1500)
+})
+
+onBeforeUnmount(() => {
+  clearInterval(autoplayLoop)
+})
+
 
 </script>
+<style scoped>
+.carousel-full {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.carousel-img {
+  width: screen;
+  height: screen;
+
+  border-radius: 20px;
+  /* arrondi plus "oval" */
+}
+
+
+
+:deep(.carousel-3d-controls:hover) {
+  background: rgba(176, 27, 27, 0.6);
+  transform: scale(1.15);
+}
+</style>
