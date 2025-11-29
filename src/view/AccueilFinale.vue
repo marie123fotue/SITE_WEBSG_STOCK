@@ -586,9 +586,9 @@
     </section>
   </footer>
   <!-- Section info bleue -->
-  <section class="w-full bg-[#0EA5E9] py-12">
+  <section class="w-full bg-gray-100 text-black py-12">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white text-center">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8  text-center">
         <!-- Phone -->
         <div class="flex flex-col items-center gap-3">
           <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">

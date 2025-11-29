@@ -2,14 +2,14 @@
 
     <!-- Le wrapper avec le dégradé (agit comme bordure) -->
     <section class=" relative bg-gradient-to-r from-[#153ABF] via-[#153ABF] to-[#2B59FF] 
-                rounded-[10px] p-[2px]  hover:-translate-y-4 transition-all duration-500">
+                rounded-[10px] p-[2px]  hover:-translate-y-4 transition-all duration-200">
 
         <!-- Le contenu principal (avec un petit espace pour voir le dégradé) -->
         <main class="group overflow-hidden flex flex-col gap-5 
                w-[265px] h-fit font-[Poppins] bg-white 
                rounded-[10px]  shadow-blue-200
                hover:bg-[#000B6B] hover:text-white hover:shadow-2xl 
-               hover:-translate-y-4 transition-all duration-500">
+               hover:-translate-y-4 transition-all duration-300">
 
             <!-- entete -->
             <div class="flex  flex-col h-full p-6">

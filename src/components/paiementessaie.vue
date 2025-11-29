@@ -6,7 +6,7 @@
        w-[270px] sm:w-[280px] md:w-[300px] lg:w-[320px] min-h-full md:h-[680px]
        font-[Poppins] bg-white rounded-[10px] border-[2px] shadow-lg border-r-[#153ABF] border-t-[#153ABF] border-b-[#153ABF] border-l-[#2B59FF]
        hover:bg-[#000B6B] hover:shadow-2xl hover:-translate-y-4
-       transition-all duration-500 group  ">
+       transition-all duration-200 group  ">
             <!-- Dégradé en bas, visible uniquement au hover -->
 
 
