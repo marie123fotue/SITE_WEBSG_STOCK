@@ -11,7 +11,7 @@
       <div class="overflow-hidden absolute inset w-[200px] h-1/2 bg-[#FE7098] blur-[135px] rounded-full top-0"></div>
       <div class="overflow-hidden absolute inset w-[200px] h-1/2 bg-gray-100 blur-[145px] rounded-full top-0 right-0">
       </div>
-      <div 
+      <div
         class="overflow-hidden absolute inset w-[200px] h-1/2 bg-[#1671CD] blur-[145px] rounded-full  bottom-0  right-190">
       </div>
       <div class="overflow-hidden absolute inset w-full h-1/8 bg-[#2216cd] blur-[135px] rounded-full  top-0  right-190">
@@ -59,8 +59,8 @@
 
             <!-- User Profile Button -->
             <div class="relative">
-               <RouterLink to="/connexion"
-                     class="flex items-center gap-2 bg-blue-400 hover:bg-blue-500 backdrop-blur-sm px-4 py-2 rounded-[15px] transition-all duration-500 border border-white/20">
+              <RouterLink to="/connexion"
+                class="flex items-center gap-2 bg-blue-400 hover:bg-blue-500 backdrop-blur-sm px-4 py-2 rounded-[15px] transition-all duration-500 border border-white/20">
                 <!-- User Icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor" class="size-6">
@@ -70,10 +70,10 @@
 
                 <!-- User Name or Guest -->
                 <span class="text-sm font-medium">Se Connecter</span>
-               </RouterLink>
-           
+              </RouterLink>
 
-          
+
+
 
               <!-- User Dropdown Menu -->
               <transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 scale-95"
@@ -194,7 +194,7 @@
                       Tarifs
                     </a>
                   </li>
-                 
+
                   <li>
                     <a href="#contact"
                       class="flex items-center gap-3 py-3 px-4 hover:bg-white/10 rounded-lg hover:text-[#0FDBD0] transition-all duration-300">
@@ -525,7 +525,7 @@
   </section>
   <personne />
   <footer class="w-full bg-gray-100 p-4 md:p-6" id="contact">
-    <section  class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 md:p-10">
+    <section class="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-6 md:p-10">
       <!-- Titre -->
       <div class="text-center mb-8">
         <h2 class="text-[#1F2937] text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
@@ -572,10 +572,10 @@
 
         <!-- Bouton d'envoi -->
         <RouterLink to="/connexion"> <button type="submit"
-          class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200">
-          Send Message
-        </button>
- </RouterLink>
+            class="w-full bg-[#1E293B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#0F172A] transition-colors duration-200">
+            Send Message
+          </button>
+        </RouterLink>
         <!-- Lien -->
         <p class="text-center text-blue-600 font-medium mt-6">
           <a href="#" class="hover:underline inline-flex items-center gap-1">
@@ -643,7 +643,7 @@
             <img src="./../assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-full h-full object-contain">
           </div>
           <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
-            Contactez-nous pour entrer 
+            Contactez-nous pour entrer
 
 
           </p>

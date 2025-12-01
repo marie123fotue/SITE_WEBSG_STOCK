@@ -18,38 +18,37 @@
   </div>
 
   <!-- Zone avec 3 chiffres -->
-  <div ref="counterSection" class="flex  flex-col md:flex-row md:justify-center " >
+  <div ref="counterSection" class="flex  flex-col md:flex-row md:justify-center text-white  bg-gradient-to-br from-[#5563DA] to-[#AC24DF]  p-8 border-none  text-center" >
     <!-- Card 1 -->
-    <div class="flex flex-col justify-center items-center w-full md:w-1/4  gap-5 bg-gradient-to-r from-pink-300 via-purple-100 to-indigo-200 p-8  border-none text-center">
+    <div class="flex flex-col justify-center items-center w-full md:w-1/4  gap-5 ">
    
-        <img src="./../assets/image/Achat/Frame.svg" alt="" class="size-15">
+        <img src="./../assets/image/Achat/Frame.svg" alt="" class="size-10 text-white">
     
       <div class="text-4xl font-bold text-center">
         {{ displayNumber }}
       </div>
       <div class="font-bold text-[20px]">Nos clients</div>
-
     </div>
     <!-- Card 2 -->
-    <div class="flex  flex-col justify-center items-center w-full md:w-1/4 gap-5 bg-gradient-to-r  from-pink-300 via-purple-300 to-indigo-300 p-8 border-none  text-center">
-       <img src="./../assets/image/slide/Frame.svg" alt="" class="size-15">
+    <div class="flex  flex-col justify-center items-center w-full md:w-1/4 gap-5 ">
+       <img src="./../assets/image/slide/Frame.svg" alt="" class="size-15 text-white">
       <div class="text-4xl font-bold text-center">
         {{ displayNumber1}}
       </div>
       <div class="font-bold text-[20px]">Nos Partenaires</div>
     </div>
     <!-- Card 3 -->
-    <div class="flex flex-col justify-center items-center w-full md:w-1/4  bg-gradient-to-r gap-5 from-yellow-300 via-orange-300 to-red-300   p-8 border-none  text-center">
+    <div class="flex flex-col justify-center items-center w-full md:w-1/4  ">
       
-      <img src="./../assets/image/Frame.svg" alt="" class="size-15">
+      <img src="./../assets/image/Frame.svg" alt="" class="size-15 text-white">
       <div class="text-4xl font-bold text-center">
         {{ displayNumber2 }}
       </div>
       <div class="font-bold text-[20px]">Nos modules</div>
     </div>
-     <div class="flex   flex-col justify-center items-center w-full md:w-1/4  gap-5  bg-gradient-to-r   from-cyan-300 via-blue-300 to-purple-300  p-8 border-none  text-center">
+     <div class="flex   flex-col justify-center items-center w-full md:w-1/4  gap-5 ">
 
-        <img src="./../assets/image/securite/Achat/Frame.svg"  alt="" class="size-15">
+        <img src="./../assets/image/securite/Achat/Frame.svg"  alt="" class="size-15 text-white">
 
       <div class="text-4xl font-bold text-center">
         {{ displayNumber3 }} %
