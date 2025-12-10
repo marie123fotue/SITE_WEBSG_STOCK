@@ -22,11 +22,11 @@
   <div ref="counterSection" class="bg-gradient-to-br from-[#5563DA] to-[#AC24DF] px-8 py-12">
     <!-- Titre animé qui s'écrit en boucle -->
     <div class="text-left mb-12">
-      <h2 class=" flex text-4xl md:ml-20 md:text-4xl font-semibold text-white min-h-[60px] gap-2">
-        <h1> Activité</h1>
+      <h1 class=" flex text-4xl md:ml-20 md:text-4xl font-semibold text-white min-h-[60px] gap-2">
+        <p> Activité</p>
         {{ typedText }}
         <span class="animate-pulse">|</span>
-      </h2>
+      </h1>
     </div>
 
     <!-- Cartes de statistiques alignées horizontalement -->

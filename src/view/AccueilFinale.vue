@@ -1,24 +1,17 @@
 <template>
 
-  <!-- Entete de la page avec animation vanta  -->
+  <!-- Entete de la page -->
+<div class="w-full h-[350px] md:h-screen relative overflow-hidden">
 
-  <div ref="haloRef" class="w-full  md:h-screen h-[400px] z-40 overflow-hidden">
+  <img src="./../assets/image/headersgstock.png"
+       class="absolute inset-0 w-full h-full object-cover object-center z-0" />
 
-    <header id="accueil"
-      class="flex flex-col z-50 w-full md:min-h-[400px] lg:min-h-[500px] overflow-hidden font-[Poppins]  text-white">
+  <div class="absolute inset-0 bg-black/30 z-10"></div>
 
-      <!-- Dégradé positionné en haut a gauche-->
-      <div class="overflow-hidden absolute inset w-[200px] h-1/2 bg-[#FE7098] blur-[135px] rounded-full top-0"></div>
-      <div class="overflow-hidden absolute inset w-[200px] h-1/2 bg-gray-100 blur-[145px] rounded-full top-0 right-0">
-      </div>
-      <div
-        class="overflow-hidden absolute inset w-[200px] h-1/2 bg-[#1671CD] blur-[145px] rounded-full  bottom-0  right-190">
-      </div>
-      <div class="overflow-hidden absolute inset w-full h-1/8 bg-[#2216cd] blur-[135px] rounded-full  top-0  right-190">
-      </div>
-
-      <!-- Barre de navigation -->
-      <nav class="relative z-50 w-full px-4 md:px-6 lg:px-10 py-4 bg-white text-gray-800">
+  <header id="accueil" class="relative z-50 text-white">
+    
+    <!-- NAV -->
+    <nav class="w-full px-4 md:px-6 lg:px-10 py-3 bg-white text-gray-800">
 
         <div class="flex justify-between items-center">
 
@@ -69,8 +62,7 @@
                 </svg>
 
                 <!-- User Name or Guest -->
-                <span class="text-sm font-medium">Se Connecter</span>
-              </RouterLink>
+                <span class="text-sm font-medium">Se Connecter</span>    </RouterLink>
 
 
 
@@ -251,16 +243,17 @@
           <div class="flex justify-center items-center text-center w-full md:w-1/2 lg:text-center max-w-xl">
             <div
               class="text-[#D7E0D1]text-[15px] md:text-[30px] lg:text-[20px] font-semibold leading-relaxed opacity-95 flex flex-col  gap-1">
-            <h1> Faites un suivi de votre stock, en contrôlant vos dépenses et
-              et ressortez votre compte de résultat,</h1>
-            <div class="flex">
-              {{ typedText }}
-              <span class="animate-pulse">|</span>
+              <h1> Faites un suivi de votre stock, en contrôlant vos dépenses et
+                et ressortez votre compte de résultat,</h1>
+              <div class="flex">
+                {{ typedText }}
+                <span class="animate-pulse">|</span>
+              </div>
             </div>
-          </div>
 
           </div>
         </div>
+        
 
         <!-- CTA -->
         <div class="flex ">
@@ -287,11 +280,11 @@
   </div>
 
   <!-- Slider images -->
-  <div class="bg-gray-200">
+  <div class=" -mt-15  -mb-15 relative z-60">
     <div class="carousel-full">
       <Carousel3d ref="carousel" :controls-visible="true" :controls-prev-html="'&#10092;'"
-        :controls-next-html="'&#10093;'" :controls-width="30" :controls-height="140" :clickable="true" :space="160"
-        :display="16" :width="400" :height="250" :border="0" :perspective="50" :inverse-scaling="3">
+        :controls-next-html="'&#10093;'" :controls-width="30" :controls-height="160" :clickable="true" :space="160"
+        :display="16" :width="400" :height="360" :border="0" :perspective="50" :inverse-scaling="3">
         <Slide v-for="(img, i) in mesImages" :key="i" :index="i">
           <img :src="img" class="carousel-img" />
         </Slide>
@@ -313,61 +306,63 @@
       <!-- Contenu principal -->
       <div class="grid md:grid-cols-2 md:gap-12 gap-8 justify-center items-center mb-8">
 
-<!-- Partie Gauche - Texte -->
-<div class="flex-1 flex-col">
+        <!-- Partie Gauche - Texte -->
+        <div class="flex-1 flex-col">
 
-  <!-- Introduction -->
-  <div class=" reveal bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-    <h3 class="text-3xl font-bold mb-4 flex items-center gap-3">
-      <span class="text-[#0FDBD0]">👋</span>Qui Sommes Nous ?
-    </h3>
-    <div class="flex flex-col gap-4 text-lg leading-relaxed">
-      <p>
-        <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
-        conçue pour optimiser la gestion globale de votre entreprise.
-      </p>
-      <p>
-        Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
-        l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
-        SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
-      </p>
-      <p>
-        Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
-      </p>
-    </div>
-  </div>
+          <!-- Introduction -->
+          <div
+            class=" reveal bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
+            <h3 class="text-3xl font-bold mb-4 flex items-center gap-3">
+              <span class="text-[#0FDBD0]">👋</span>Qui Sommes Nous ?
+            </h3>
+            <div class="flex flex-col gap-4 text-lg leading-relaxed">
+              <p>
+                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
+                conçue pour optimiser la gestion globale de votre entreprise.
+              </p>
+              <p>
+                Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
+                l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
+                SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
+              </p>
+              <p>
+                Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
+              </p>
+            </div>
+          </div>
 
-  <div class=" reveal mt-3 bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
-    <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-        stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
-        <path stroke-linecap="round" stroke-linejoin="round"
-          d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-      </svg>
-      Pourquoi nous choisir
-    </h3>
-    <div class="flex flex-col gap-4 text-[16px] leading-relaxed">
-      <p>
-        <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
-        élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
-        prise en main rapide, réduisant le temps de formation de vos équipes.
-      </p>
-      <p>
-        Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
-        des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
-      </p>
-      <p>
-        Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
-        éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
-        hébergement sécurisé.
-      </p>
-      <p>
-        Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
-        entreprise.
-      </p>
-    </div>
-  </div>
-</div>
+          <div
+            class=" reveal mt-3 bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
+            <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-7 h-7 text-[#0FDBD0]">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+              </svg>
+              Pourquoi nous choisir
+            </h3>
+            <div class="flex flex-col gap-4 text-[16px] leading-relaxed">
+              <p>
+                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
+                élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
+                prise en main rapide, réduisant le temps de formation de vos équipes.
+              </p>
+              <p>
+                Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
+                des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
+              </p>
+              <p>
+                Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
+                éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
+                hébergement sécurisé.
+              </p>
+              <p>
+                Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
+                entreprise.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <!-- Nos fonctionnalites -->
         <div
@@ -391,7 +386,7 @@
                 </svg>
               </button>
               <span class="text-[20px]  font-semibold t">{{ fonct }}</span>
-            </li>    
+            </li>
             <!-- reveal pour faire l'effet qui apparait et disparait -->
 
 
@@ -844,8 +839,8 @@ const handleLogout = () => {
   mobileMenuOpen.value = false
   userMenuOpen.value = false
 }
-const haloRef = ref(null);
-let vantaEffect = null;
+// const haloRef = ref(null);
+// let vantaEffect = null;
 onMounted(() => {
   // Ajouter l'écouteur de clic au montage du composant
 
@@ -855,47 +850,47 @@ onMounted(() => {
   }, 1500)
   animateTyping();
   // Vérifie que VANTA est chargé
-  if (window.VANTA) {
-    vantaEffect = window.VANTA.HALO({
-      el: haloRef.value,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.0,
-      minWidth: 200.0,
-      //  baseColor: 0x1bdb,
-      backgroundColor: 0x43659,
-      size: 1.7,
-    });
-  }
-   const revealElements = document.querySelectorAll(".reveal");
+  // if (window.VANTA) {
+  //   vantaEffect = window.VANTA.HALO({
+  //     el: haloRef.value,
+  //     mouseControls: true,
+  //     touchControls: true,
+  //     gyroControls: false,
+  //     minHeight: 200.0,
+  //     minWidth: 200.0,
+  //     //  baseColor: 0x1bdb,
+  //     backgroundColor: 0x43659,
+  //     size: 1.7,
+  //   });
+  // }
+  const revealElements = document.querySelectorAll(".reveal");
 
-let staggerCounter = 0; // permet un vrai ordre 1 → 2 → 3 → ...
+  let staggerCounter = 0; // permet un vrai ordre 1 → 2 → 3 → ...
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // délai progressif contrôlé
-        entry.target.style.transitionDelay = `${staggerCounter * 500}ms`;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // délai progressif contrôlé
+          entry.target.style.transitionDelay = `${staggerCounter * 100}ms`;
 
-        entry.target.classList.add("reveal-active");
+          entry.target.classList.add("reveal-active");
 
-        staggerCounter++; // le suivant attend un peu plus
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
+          staggerCounter++; // le suivant attend un peu plus
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-revealElements.forEach((el) => observer.observe(el));
+  revealElements.forEach((el) => observer.observe(el));
   const els = document.querySelectorAll(".reveal-left, .reveal-top, .reveal-right");
 
   const observers = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        entry.target.style.transitionDelay = `${i * 200}ms`; // 0ms / 200ms / 400ms
+        entry.target.style.transitionDelay = `${i * 50}ms`; // 0ms / 200ms / 400ms
         entry.target.classList.add("reveal-active");
         observers.unobserve(entry.target);
       }
@@ -1004,21 +999,31 @@ let autoplayLoop = null
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 0;
+
 }
 
-.carousel-img {
-  width: screen;
-  height: screen;
 
-  border-radius: 20px;
-  /* arrondi plus "oval" */
+
+.carousel-img {
+  width: 120%;
+  height: 120%;
+  border-radius: 15px;
+  display: block;
+filter: drop-shadow(0 10px 15px rgba(158, 151, 114, 0.707));
+}
+
+.carousel-3d-slide {
+  background: transparent !important; /* enlève toute couleur */
+  box-shadow: none !important;       /* enlève les ombres éventuelles */
+    border-radius:15px;
+      padding-bottom: 25px !important;
 }
 
 
 
 :deep(.carousel-3d-controls:hover) {
-  background: rgba(176, 27, 27, 0.6);
+ 
   transform: scale(1.15);
 }
 </style>
@@ -1033,6 +1038,7 @@ let autoplayLoop = null
   opacity: 1;
   transform: translateY(0);
 }
+
 .reveal {
   opacity: 0;
   transition: 0.8s ease;
@@ -1058,5 +1064,4 @@ let autoplayLoop = null
   opacity: 1;
   transform: translateX(0) translateY(0);
 }
-
 </style>
