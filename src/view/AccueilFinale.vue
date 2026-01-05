@@ -847,7 +847,7 @@
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
               <a href="mailto:info@leogicom.com" class="hover:text-[#0EA5E9] transition-colors">
-                info@leogicom.com
+                info@SGStock.com
               </a>
             </li>
             <li class="flex items-center gap-2 justify-center md:justify-start">
