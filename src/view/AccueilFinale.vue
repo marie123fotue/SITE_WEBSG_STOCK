@@ -716,7 +716,7 @@
   <!-- Section info bleue -->
   <section class="w-full  text-black py-12 bg-gradient-to-br from-indigo-800 via-indigo-800 to-purple-900 text-white">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8  text-center">
+      <div class="grid grid-cols-3 md:grid-cols-3  gap-4 md:gap-8  text-center">
         <!-- Phone -->
         <div class="flex flex-col items-center gap-3">
           <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
