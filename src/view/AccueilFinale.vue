@@ -726,8 +726,8 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold">Phone</h3>
-          <p class="text-sm">+237 693 26 35 17</p>
-          <p class="text-sm opacity-90">info@SG-Stock.com</p>
+          <p class="  text-sm hidden  md:flex">+237 693 26 35 17</p>
+          <p class="text-sm opacity-90 hidden  md:flex">info@SG-Stock.com</p> 
         </div>
 
         <!-- Localisation -->
@@ -740,8 +740,8 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold">Localisation</h3>
-          <p class="text-sm">Douala, Cameroun</p>
-          <p class="text-sm opacity-90">Akwa ancien collège les Travailleurs</p>
+          <p class="text-sm hidden  md:flex">Douala, Cameroun</p>
+          <p class="text-sm opacity-90 hidden  md:flex">Akwa ancien collège les Travailleurs</p>
         </div>
 
         <!-- Hours -->
@@ -754,8 +754,8 @@
             </svg>
           </div>
           <h3 class="text-lg font-semibold">Hours</h3>
-          <p class="text-sm">Lun-Ven: 8h-18h</p>
-          <p class="text-sm opacity-90">Sam: 8h-12h</p>
+          <p class="text-sm hidden  md:flex">Lun-Ven: 8h-18h</p>
+          <p class="text-sm opacity-90 hidden  md:flex">Sam: 8h-12h</p>
         </div>
       </div>
     </div>
@@ -807,7 +807,7 @@
         </div>
 
         <!-- Services -->
-        <div class="space-y-4  text-center md:text-left ">
+        <div class="space-y-4  text-center md:text-left  hidden  md:flex md:flex-col ">
           <h3 class="text-base md:text-lg font-bold text-white">Services</h3>
           <ul class="space-y-3 text-gray-400 text-sm ">
             <li>
@@ -865,7 +865,7 @@
       <!-- Copyright -->
       <div class="pt-6 md:pt-8 border-t border-gray-800 text-center">
         <p class="text-gray-500 text-xs md:text-sm">
-          © 2025 Leogicom. All rights reserved.
+          © 2025 SGStock.com All rights reserved.
         </p>
       </div>
     </div>
