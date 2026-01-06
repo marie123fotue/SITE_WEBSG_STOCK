@@ -45,7 +45,7 @@
         <!-- Titre responsive -->
         <div class="text-center mb-10 sm:mb-12 md:mb-14 lg:mb-20 max-w-2xl sm:max-w-4xl mx-auto">
           <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent leading-tight mb-6 sm:mb-8 drop-shadow-2xl px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 rounded-2xl inline-block backdrop-blur-sm border border-white/10 shadow-purple-500/20">
-            3 étapes simples pour<br class="hidden sm:block md:hidden lg:block"><span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400 bg-clip-text text-transparent font-black drop-shadow-2xl">Passer commande</span>
+            3 étapes simples pour<br class="hidden sm:block md:hidden lg:block"><span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400 bg-clip-text text-transparent font-black drop-shadow-2xl">Obtenir votre Application</span>
           </h1>
           
           <!-- Progression MOBILE-OPTIMIZED -->

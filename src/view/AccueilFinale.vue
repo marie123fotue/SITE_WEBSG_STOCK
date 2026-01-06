@@ -355,198 +355,188 @@
 
 <!-- Section À Propos -->
 
-  <section id="Apropos" class="min-h-screen bg-gray-800 py-12 md:py-20 px-4 md:px-6 text-white">
-    <div class="max-w-7xl mx-auto">
+<section id="Apropos" class="min-h-screen bg-gray-800 py-12 md:py-20 px-4 md:px-6 text-white">
+  <div class="max-w-7xl mx-auto">
+    <!-- Titre de la section -->
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        À Propos de <span class="text-[#0FDBD0]">Nous</span>
+      </h2>
+      <div class="w-16 md:w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
+    </div>
 
-      <!-- Titre de la section -->
-      <div class="text-left ml-2 mb-5 md:mb-10">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          À Propos de <span class="text-[#0FDBD0]">Nous</span>
-        </h2>
-        <div class="w-16 md:w-24 h-1 bg-[#0FDBD0] mx-auto rounded-full"></div>
-      </div>
-
-      <!-- Contenu principal -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-8">
-
-        <!-- Partie Gauche - Texte -->
-        <div class="flex flex-col gap-4 md:gap-6">
-
-          <!-- Introduction -->
-          <div class="reveal bg-white/5 rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
-              <span class="text-[#0FDBD0] text-2xl md:text-3xl">👋</span>
-              <span>Qui Sommes Nous ?</span>
-            </h3>
-            <div class="flex flex-col justify-items-center align-center  pr-2 gap-3 md:gap-4 text-sm sm:text-base md:text-lg leading-relaxed">
-              <p>
-                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
-                conçue pour optimiser la gestion globale de votre entreprise.
-              </p>
-              
-              <!-- Paragraphes visibles uniquement sur desktop ou si expanded -->
-              <p :class="{ 'hidden md:block': !showMoreIntro }">
-                Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
-                l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
-                SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
-              </p>
-              <p :class="{ 'hidden md:block': !showMoreIntro }">
-                Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
-              </p>
-            </div>
-            
-            <!-- Bouton "Voir plus" visible uniquement sur mobile -->
-            <button 
-              @click="showMoreIntro = !showMoreIntro"
-              class="md:hidden mt-4 text-[#0FDBD0] font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all"
-            >
-              {{ showMoreIntro ? 'Voir moins' : 'Voir plus' }}
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke-width="2" 
-                stroke="currentColor" 
-                class="w-4 h-4 transition-transform"
-                :class="{ 'rotate-180': showMoreIntro }"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Pourquoi nous choisir -->
-          <div class="reveal bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300">
-            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 md:mb-4 flex items-center gap-2 md:gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-6 h-6 md:w-7 md:h-7 text-[#0FDBD0] flex-shrink-0">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-              </svg>
-              Pourquoi nous choisir
-            </h3>
-            <div class="flex flex-col gap-3 md:gap-4 text-sm sm:text-base leading-relaxed">
-              <p>
-                <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
-                élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
-                prise en main rapide, réduisant le temps de formation de vos équipes.
-              </p>
-              
-              <!-- Paragraphes visibles uniquement sur desktop ou si expanded -->
-                <p :class="{ 'hidden md:block': !showMoreWhy }">
-               Notre interface intuitive permet une
-                prise en main rapide, réduisant le temps de formation de vos équipes.
-              </p>
-              <p :class="{ 'hidden md:block': !showMoreWhy }">
-                Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
-                des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
-              </p>
-              <p :class="{ 'hidden md:block': !showMoreWhy }">
-                Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
-                éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
-                hébergement sécurisé.
-              </p>
-              <p :class="{ 'hidden md:block': !showMoreWhy }">
-                Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
-                entreprise.
-              </p>
-            </div>
-            
-            <!-- Bouton "Voir plus" visible uniquement sur mobile -->
-            <button 
-              @click="showMoreWhy = !showMoreWhy"
-              class="md:hidden mt-4 text-[#0FDBD0] font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all"
-            >
-              {{ showMoreWhy ? 'Voir moins' : 'Voir plus' }}
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke-width="2" 
-                stroke="currentColor" 
-                class="w-4 h-4 transition-transform"
-                :class="{ 'rotate-180': showMoreWhy }"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Nos fonctionnalités -->
-        <div class="reveal bg-white/5 backdrop-blur-sm rounded-xl md:rounded-2xl p-6 md:p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300">
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-6 md:mb-8 flex justify-center items-center gap-2 md:gap-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6 md:w-7 md:h-7 text-[#0FDBD0] flex-shrink-0">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-            </svg>
-            Nos Fonctionnalités
+    <!-- Contenu principal -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      
+      <!-- Partie Gauche - Texte -->
+      <div class="space-y-6 lg:space-y-8">
+        <!-- Introduction -->
+        <div class="bg-white/5 rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300 hover:shadow-xl">
+          <h3 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+            <span class="text-[#0FDBD0] text-3xl">👋</span>
+            <span>Qui Sommes Nous ?</span>
           </h3>
-          
-          <!-- Liste des fonctionnalités -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-            <!-- Première colonne -->
-            <div class="space-y-3 md:space-y-4">
-              <div 
-                v-for="(fonct, index) in fonctionnalites" 
-                :key="'fonct1-' + index"
-                v-show="showMoreFeatures || index < 2"
-                class="reveal flex items-center gap-3 md:gap-4"
-              >
-                <button class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                  </svg>
-                </button>
-                <span class="text-sm sm:text-base md:text-lg font-semibold">{{ fonct }}</span>
-              </div>
-            </div>
-
-            <!-- Deuxième colonne -->
-            <div class="space-y-3 md:space-y-4">
-              <div 
-                v-for="(fonct, index) in fonctionnalites1" 
-                :key="'fonct2-' + index"
-                v-show="showMoreFeatures || index < 2"
-                class="reveal flex items-center gap-3 md:gap-4"
-              >
-                <button class="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5 text-white">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                  </svg>
-                </button>
-                <span class="text-sm sm:text-base md:text-lg font-semibold">{{ fonct }}</span>
-              </div>
-            </div>
+          <div class="space-y-4 text-base md:text-lg leading-relaxed">
+            <p>
+              <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> est une solution ERP complète et innovante
+              conçue pour optimiser la gestion globale de votre entreprise.
+            </p>
+            <!-- Paragraphes cachés par défaut, visibles si expanded -->
+            <p v-show="showMoreIntro">
+              Notre plateforme 3-en-1 combine intelligemment la gestion des stocks, la comptabilité avancée et
+              l'analyse statistique de vos ventes en temps réel. Développée avec les technologies les plus récentes,
+              SG-STOCK s'adapte aux besoins spécifiques des PME et commerces en quête de performance.
+            </p>
+            <p v-show="showMoreIntro">
+              Transformez vos données en décisions stratégiques et propulsez votre activité vers de nouveaux sommets.
+            </p>
           </div>
           
-          <!-- Bouton "Voir plus" pour les fonctionnalités (visible sur tous les écrans) -->
+          <!-- Bouton "Voir plus" VISIBLE SUR TOUS LES ÉCRANS -->
           <button 
-            @click="showMoreFeatures = !showMoreFeatures"
-            class="mt-6 w-full text-[#0FDBD0] font-semibold text-sm flex items-center justify-center gap-2 hover:gap-3 transition-all"
+            @click="showMoreIntro = !showMoreIntro"
+            class="mt-6 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80"
           >
-            {{ showMoreFeatures ? 'Voir moins' : 'Voir toutes les fonctionnalités' }}
+            {{ showMoreIntro ? 'Voir moins' : 'Voir plus' }}
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               fill="none" 
               viewBox="0 0 24 24" 
               stroke-width="2" 
               stroke="currentColor" 
-              class="w-4 h-4 transition-transform"
-              :class="{ 'rotate-180': showMoreFeatures }"
+              class="w-5 h-5 transition-transform duration-200"
+              :class="{ 'rotate-180': showMoreIntro }"
             >
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
           </button>
         </div>
 
+        <!-- Pourquoi nous choisir -->
+        <div class="bg-gradient-to-br from-[#0FDBD0]/10 to-transparent backdrop-blur-sm rounded-2xl p-8 border border-[#0FDBD0]/30 hover:border-[#0FDBD0]/60 transition-all duration-300 hover:shadow-2xl">
+          <h3 class="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-8 h-8 text-[#0FDBD0] flex-shrink-0">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l-.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+            </svg>
+            Pourquoi nous choisir
+          </h3>
+          <div class="space-y-4 text-base leading-relaxed">
+            <p>
+              <span class="text-[#0FDBD0] font-semibold">SG-STOCK</span> se distingue par son approche tout-en-un qui
+              élimine le besoin de jongler entre plusieurs logiciels coûteux. Notre interface intuitive permet une
+              prise en main rapide, réduisant le temps de formation de vos équipes.
+            </p>
+            <!-- Paragraphes cachés par défaut, visibles si expanded -->
+            <p v-show="showMoreWhy">
+              Avec plus de 12 modules interconnectés, vous disposez d'une vision à 360° de votre activité : gestion
+              des stocks, ventes, facturation, clients, fournisseurs, et bien plus encore.
+            </p>
+            <p v-show="showMoreWhy">
+              Notre tableau de bord intelligent transforme vos données en insights exploitables pour des décisions
+              éclairées en temps réel. La sécurité de vos données est garantie avec des sauvegardes automatiques et un
+              hébergement sécurisé.
+            </p>
+            <p v-show="showMoreWhy">
+              Choisir SG-STOCK, c'est investir dans la croissance durable et l'efficacité opérationnelle de votre
+              entreprise.
+            </p>
+          </div>
+          
+          <!-- Bouton "Voir plus" VISIBLE SUR TOUS LES ÉCRANS -->
+          <button 
+            @click="showMoreWhy = !showMoreWhy"
+            class="mt-6 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80"
+          >
+            {{ showMoreWhy ? 'Voir moins' : 'Voir plus' }}
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke-width="2" 
+              stroke="currentColor" 
+              class="w-5 h-5 transition-transform duration-200"
+              :class="{ 'rotate-180': showMoreWhy }"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </button>
+        </div>
       </div>
 
+      <!-- Nos fonctionnalités -->
+      <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#0FDBD0]/50 transition-all duration-300 hover:shadow-xl">
+        <h3 class="text-2xl md:text-3xl font-bold mb-8 flex justify-center items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-8 h-8 text-[#0FDBD0] flex-shrink-0">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+          </svg>
+          Nos Fonctionnalités
+        </h3>
+        
+        <!-- Liste des fonctionnalités - SEULEMENT 2 PAR COLONNE PAR DÉFAUT -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+          <!-- Première colonne -->
+          <div class="space-y-4">
+            <div 
+              v-for="(fonct, index) in fonctionnalites" 
+              :key="'fonct1-' + index"
+              v-show="showMoreFeatures || index < 4"
+              class="flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-all duration-200"
+            >
+              <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </div>
+              <span class="text-base md:text-lg font-semibold">{{ fonct }}</span>
+            </div>
+          </div>
+
+          <!-- Deuxième colonne -->
+          <div class="space-y-4">
+            <div 
+              v-for="(fonct, index) in fonctionnalites1" 
+              :key="'fonct2-' + index"
+              v-show="showMoreFeatures || index < 4"
+              class="flex items-center gap-2 p-1 rounded-lg hover:bg-white/5 transition-all duration-200"
+            >
+              <div class="w-8 h-10 md:w-12 md:h-12 rounded-full bg-[#0736CF] flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 md:w-6 md:h-6 text-white">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
+              </div>
+              <span class="text-base md:text-lg font-semibold">{{ fonct }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- LIEN "Voir plus" simple (pas de bouton stylé) VISIBLE SUR TOUS LES ÉCRANS -->
+        <button 
+          @click="showMoreFeatures = !showMoreFeatures"
+          class="mt-8 text-[#0FDBD0] font-semibold text-base flex items-center gap-2 hover:gap-3 transition-all duration-200 hover:text-[#0FDBD0]/80 underline decoration-[#0FDBD0]/50 underline-offset-4 hover:decoration-[#0FDBD0]/80"
+        >
+          {{ showMoreFeatures ? 'Voir moins' : 'Voir toutes les fonctionnalités' }}
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke-width="2" 
+            stroke="currentColor" 
+            class="w-5 h-5 transition-transform duration-200"
+            :class="{ 'rotate-180': showMoreFeatures }"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+        </button>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Image fonctionnalités -->
 
@@ -566,7 +556,7 @@
 
 
     <div class="w-full bg-white py-12 px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-15 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 sm:gap-15 max-w-6xl mx-auto">
 
         <!-- Fonctionnalité 1 -->
         <div class=" reveal-left flex flex-col items-center h-full">
@@ -767,7 +757,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
         <!-- Logo et description -->
         <div class="space-y-4 flex flex-col justify-center items-center md:items-start text-center md:text-left hidden  md:flex ">
-          <div class="w-20 h-20 md:w-24 md:h-24">
+          <div class=" md:w-24 md:h-10">
             <img src="./../assets/image/OBJECTS.png" alt="SG-Stocks Logo" class="w-full h-full object-contain">
           </div>
           <p class="text-gray-400 text-sm leading-relaxed max-w-xs hidden  md:flex">
@@ -861,13 +851,15 @@
           </ul>
         </div>
       </div>
+      
 
       <!-- Copyright -->
-      <div class="pt-6 md:pt-8 border-t border-gray-800 text-center">
-        <p class="text-gray-500 text-xs md:text-sm">
-          © 2025 SGStock.com All rights reserved.
-        </p>
-      </div>
+       <!-- Copyright -->
+    <div class="pt-12 md:pt-16 border-t border-gray-800 text-center">
+      <p class="text-gray-500 text-sm md:text-base">
+        © 2026 SG-Stock. Tous droits réservés. | Développé avec ❤️ à Douala, Cameroun
+      </p>
+    </div>
     </div>
     
   </footer>

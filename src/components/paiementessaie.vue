@@ -3,10 +3,10 @@
 
 
     <main class="relative overflow-hidden flex flex-col text-black
-       w-[270px] sm:w-[280px] md:w-[300px] lg:w-[320px] min-h-full md:h-[680px]
+       w-[270px] sm:w-[280px] md:w-[300px] lg:w-[320px] min-h-full md:h-[640px]
        font-[Poppins] bg-white rounded-[10px] border-[2px] shadow-lg border-r-[#153ABF] border-t-[#153ABF] border-b-[#153ABF] border-l-[#2B59FF]
-       hover:bg-[#000B6B] hover:shadow-2xl hover:-translate-y-4
-       transition-all duration-200 group  ">
+       hover:bg-[#000B6B] hover:shadow-2xl hover:-translate-y-8
+       transition-all duration-700 group  ">
         <!-- Dégradé en bas, visible uniquement au hover -->
 
 
@@ -47,7 +47,7 @@
                 </div>
 
                 <!-- Ligne de séparation -->
-                <hr class="w-[180px] border-gray-300 mb-4 transition-colors duration-300 group-hover:border-gray-500">
+                    <hr class="w-full border-gray-300 transition-colors duration-300 group-hover:border-gray-500" />
 
                 <!-- Prix Initial Barré -->
                 <div class="flex items-baseline gap-1 mb-2">
@@ -77,19 +77,19 @@
                         group-hover:text-gray-300">
                         Limité
                     </p>
-                    <hr class="w-full border-gray-300 transition-colors duration-300 group-hover:border-gray-500" />
+                    <hr class="w-full border-gray-300 transition-colors duration-300 group-hover:border-gray-700" />
                 </div>
             </div>
 
             <!-- 🔥 IMPORTANT: Cette liste affiche seulement 4 items sur mobile -->
             <ul class="flex flex-col gap-2 w-full max-w-xs">
                 <li v-for="(feature, idx) in visibleFeatures" :key="idx"
-                    class="flex items-start justify-between gap-2 text-[10px] text-gray-700">
+                    class="flex items-start justify-between gap-2 text-[10px] text-gray-700 group-hover:text-gray-300">
                     <div class="flex gap-2 md:gap-3 items-start flex-1">
                         <button
-                            class="w-4 h-4 md:w-[18px] md:h-[18px] bg-black rounded-full hover:bg-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                            class="w-4 h-4 md:w-[18px] md:h-[18px] bg-black rounded-full group:hover:bg-white flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" class="w-3 h-3 md:w-4 md:h-4 text-white hover:text-black">
+                                stroke="currentColor" class="w-3 h-3 md:w-4 md:h-4 text-white ">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                             </svg>
                         </button>
@@ -116,7 +116,7 @@
             <!-- Bouton et footer -->
             <div class="flex flex-col items-center gap-2  mt-2">
                 <button class="w-full bg-[#F9D783] text-[#000B6B] rounded-md py-[5px] md:py-[6px] px-4
-                       text-[12px] md:text-[14px] font-semibold group-hover:bg-[#f5d06c] transition-colors">
+                       text-[12px] md:text-[14px] font-semibold group-hover:bg-[#f5d06c] transition-colors mt-6">
                     Essai gratuit pendant 14 jours
                 </button>
 
